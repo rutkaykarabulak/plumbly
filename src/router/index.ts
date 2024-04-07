@@ -18,6 +18,11 @@ const router = createRouter({
       path: "/signUp/accountType",
       name: "accountType",
       component: () => import("@/views/sign-up/AccountTypeView.vue")
+    },
+    {
+      path: "/signUp/identifyUser",
+      name: "identifyUser",
+      component: () => import("@/views/sign-up/IdentifyUserView.vue")
     }
   ]
 });

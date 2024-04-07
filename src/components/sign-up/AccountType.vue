@@ -16,7 +16,8 @@ const accountType = ref("");
                         <q-btn class="text-capitalize q-pa-md" label="Householder" color="blue-grey-14"></q-btn>
                     </div>
                     <div class="row justify-center relative-position" style="top: 30px;">
-                        <q-btn type="next" class=" col-xs-12 col-md-6" label="Next" color="dark" rounded></q-btn>
+                        <q-btn to="/signUp/identifyUser" type="next" class=" col-xs-12 col-md-6" label="Next"
+                            color="dark" rounded></q-btn>
                     </div>
                 </div>
             </q-page>
