@@ -23,7 +23,8 @@ const options: Array<String> = [
                         </template></q-select>
                 </div>
                 <div class="row justify-center">
-                    <q-btn label="Next" rounded color="black" class="col-xs-4 col-md-4"></q-btn>
+                    <q-btn to="/signUp/contactInformation" label="Next" rounded color="black"
+                        class="col-xs-4 col-md-4"></q-btn>
                 </div>
             </q-form>
         </div>
