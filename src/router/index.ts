@@ -28,6 +28,11 @@ const router = createRouter({
       path: "/signUp/contactInformation",
       name: "contactInformation",
       component: () => import("@/views/sign-up/ContactInformationView.vue")
+    },
+    {
+      path: "/signUp/success",
+      name: "success",
+      component: () => import("@/views/sign-up/SuccessView.vue")
     }
   ]
 });
