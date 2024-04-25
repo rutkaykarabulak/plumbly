@@ -62,6 +62,7 @@ const password = ref("");
                   class="col-xs-12 col-sm-4 text-capitalize"
                   color="black"
                   rounded
+                  to="/signUp/emailCheck"
                 >
                 </q-btn>
               </div>
