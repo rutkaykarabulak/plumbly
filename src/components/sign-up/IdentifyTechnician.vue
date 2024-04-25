@@ -26,8 +26,7 @@ defineProps<{
             hide-selected
             fill-input
           >
-            <template v-slot:prepend>
-              <q-icon name="work"></q-icon> </template
+            <template v-slot:prepend> <q-icon name="work"></q-icon> </template
           ></q-select>
         </div>
         <div class="row justify-center">
@@ -36,8 +35,7 @@ defineProps<{
             v-model="secondProfession"
             name="secondProfession"
             label="Second profession (optional)"
-            ><template v-slot:prepend>
-              <q-icon name="construction"></q-icon> </template
+            ><template v-slot:prepend> <q-icon name="construction"></q-icon> </template
           ></q-input>
         </div>
         <div class="row justify-center">
@@ -50,8 +48,7 @@ defineProps<{
             label="Years of experience"
             hint="How many years of experience you have?"
           >
-            <template v-slot:prepend>
-              <q-icon name="engineering"></q-icon> </template
+            <template v-slot:prepend> <q-icon name="engineering"></q-icon> </template
           ></q-select>
         </div>
         <div class="q-gutter-xl q-my-xs">

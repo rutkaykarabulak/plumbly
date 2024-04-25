@@ -25,18 +25,38 @@ const options: Array<String> = ["Plumber", "Electrician", "Gardener", "Sensei"];
             </p>
           </div>
           <div class="row q-mx-md q-pt-lg">
-            <q-input class="col-xs-12 col-10 q-mr-lg" v-model="location" type="text" color="black" rounded outlined
-              autofocus placeholder="Enter your location" hint="Find all technicians for free!">
+            <q-input
+              class="col-xs-12 col-10 q-mr-lg"
+              v-model="location"
+              type="text"
+              color="black"
+              rounded
+              outlined
+              autofocus
+              placeholder="Enter your location"
+              hint="Find all technicians for free!"
+            >
               <template v-slot:prepend>
                 <q-icon name="place" color="black"></q-icon>
               </template>
             </q-input>
           </div>
           <div class="row content-center justify-center q-mt-md">
-            <q-select class="col-6" rounded outlined v-model="filterBy" :options="options" fill-input
-              label="Filter by technician">
+            <q-select
+              class="col-6"
+              rounded
+              outlined
+              v-model="filterBy"
+              :options="options"
+              fill-input
+              label="Filter by technician"
+            >
             </q-select>
-            <q-btn class="col-xs-4 col-sm-2 q-my-sm q-ml-md text-capitalize shadow-8" rounded color="dark">
+            <q-btn
+              class="col-xs-4 col-sm-2 q-my-sm q-ml-md text-capitalize shadow-8"
+              rounded
+              color="dark"
+            >
               Find
             </q-btn>
           </div>
@@ -47,7 +67,9 @@ const options: Array<String> = ["Plumber", "Electrician", "Gardener", "Sensei"];
               <span class="text-white">for free!</span>
             </p>
             <div class="row col-12 items-center justify-center">
-              <q-btn to="/signUp" rounded color="black" class="col-xs-6 col-sm-4 text-capitalize">Sign up</q-btn>
+              <q-btn to="/signUp" rounded color="black" class="col-xs-6 col-sm-4 text-capitalize"
+                >Sign up</q-btn
+              >
             </div>
           </div>
         </q-page>
