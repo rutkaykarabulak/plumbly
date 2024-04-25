@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import ContactInformation from '@/components/sign-up/ContactInformation.vue';
+import ContactInformation from "@/components/sign-up/ContactInformation.vue";
 </script>
 
 <template>
-    <ContactInformation />
+  <ContactInformation />
 </template>
 
 <style scoped></style>

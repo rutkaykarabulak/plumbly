@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import IdentifyUser from "@/components/sign-up/IdentifyUser.vue"
+import IdentifyUser from "@/components/sign-up/IdentifyUser.vue";
 </script>
 
 <template>
-    <IdentifyUser />
+  <IdentifyUser />
 </template>
 
 <style scoped></style>

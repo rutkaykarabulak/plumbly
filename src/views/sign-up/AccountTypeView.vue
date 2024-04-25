@@ -3,7 +3,7 @@ import AccountType from "../../components/sign-up/AccountType.vue";
 </script>
 
 <template>
-    <AccountType />
+  <AccountType />
 </template>
 
 <style scoped></style>
