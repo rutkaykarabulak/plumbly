@@ -22,8 +22,7 @@ const options: Array<String> = ["Plumber", "Electrician", "Sex worker", "Sensei"
             use-chips
             hint="Select one or multiple technicians as you prefer"
           >
-            <template v-slot:prepend>
-              <q-icon name="engineering"></q-icon> </template
+            <template v-slot:prepend> <q-icon name="engineering"></q-icon> </template
           ></q-select>
         </div>
         <div class="row justify-center">

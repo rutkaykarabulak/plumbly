@@ -3,7 +3,7 @@ import CheckYourEmail from "@/components/sign-up/CheckYourEmail.vue";
 </script>
 
 <template>
-    <CheckYourEmail />
+  <CheckYourEmail />
 </template>
 
 <style scoped></style>

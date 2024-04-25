@@ -36,12 +36,10 @@ const companyAddress = ref("");
                 </template>
               </q-input>
               <q-input v-model="companyPhoneNumber" label="Company phone number" type="tel">
-                <template v-slot:prepend>
-                  <q-icon name="business"></q-icon> </template
+                <template v-slot:prepend> <q-icon name="business"></q-icon> </template
               ></q-input>
               <q-input v-model="companyAddress" label="Company address">
-                <template v-slot:prepend>
-                  <q-icon name="book"></q-icon> </template
+                <template v-slot:prepend> <q-icon name="book"></q-icon> </template
               ></q-input>
             </div>
             <div class="row items-end q-mt-md">
