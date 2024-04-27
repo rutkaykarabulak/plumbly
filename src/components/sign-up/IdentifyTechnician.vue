@@ -1,12 +1,30 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const profession = ref("");
-const secondProfession = ref("");
-const yearsOfExperience = ref("");
+import { ref, type Ref, computed } from "vue";
+import {
+  professionValidation,
+  yearsOfExperienceValidation
+} from "@/utils/validations/identifyUserValidations";
+import type { QSelect } from "quasar";
 defineProps<{
   professions: Array<String>;
   yearsOfExperiences: Array<String>;
 }>();
+
+const profession: Ref<string> = ref("");
+const secondProfession = ref(null);
+const yearsOfExperience = ref(null);
+const otherProfession: Ref<string> = ref("");
+const professionSelect: Ref<QSelect | null> = ref(null);
+const otherProfessionRef: Ref<QSelect | null> = ref(null);
+const yearsOfExperienceRef: Ref<QSelect | null> = ref(null);
+
+const isThereAnyValidationError = computed(() => {
+  return (
+    professionSelect.value?.hasError ||
+    otherProfessionRef.value?.hasError ||
+    yearsOfExperienceRef.value?.hasError
+  );
+});
 </script>
 
 <template>
@@ -20,14 +38,27 @@ defineProps<{
             class="col-xs-12 col-md-4"
             v-model="profession"
             name="profession"
-            label="Enter your profession"
+            label="Select your profession"
             :options="professions"
-            use-input
-            hide-selected
             fill-input
+            :disable="otherProfession.length !== 0"
+            :rules="professionValidation"
+            ref="professionSelect"
           >
             <template v-slot:prepend> <q-icon name="work"></q-icon> </template
           ></q-select>
+        </div>
+        <div v-if="profession.toLowerCase().includes('other')" class="row justify-center">
+          <q-input
+            class="col-xs-12 col-md-4"
+            v-model="otherProfession"
+            name="otherProfession"
+            label="Specify your profession"
+            rounded
+            :rules="professionValidation"
+            ref="otherProfessionRef"
+          >
+          </q-input>
         </div>
         <div class="row justify-center">
           <q-input
@@ -47,13 +78,15 @@ defineProps<{
             :options="yearsOfExperiences"
             label="Years of experience"
             hint="How many years of experience you have?"
+            :rules="yearsOfExperienceValidation"
+            ref="yearsOfExperienceRef"
           >
             <template v-slot:prepend> <q-icon name="engineering"></q-icon> </template
           ></q-select>
         </div>
         <div class="q-gutter-xl q-my-xs">
           <q-btn rounded color="dark" to="/signUp/accountType" label="back" outline></q-btn>
-          <q-btn rounded color="dark" label="next"></q-btn>
+          <q-btn rounded color="dark" label="next" :disable="isThereAnyValidationError"></q-btn>
         </div>
       </q-form>
     </div>
