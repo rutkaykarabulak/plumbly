@@ -20,7 +20,7 @@ const router = createRouter({
       component: () => import("@/views/sign-up/AccountTypeView.vue")
     },
     {
-      path: "/signUp/identifyUser",
+      path: "/signUp/identifyUser/:accountType",
       name: "identifyUser",
       component: () => import("@/views/sign-up/IdentifyUserView.vue")
     },
