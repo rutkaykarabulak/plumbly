@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { useRoute } from "vue-router";
 import IdentifyTechnician from "./IdentifyTechnician.vue";
 import IdentifyHouseholder from "./IdentifyHouseholder.vue";
-const userType = ref("householder");
+import { AccountType } from "@/utils/accountType";
+
 const professions: Array<String> = [
   "Plumber",
   "Electrician",
@@ -10,14 +11,20 @@ const professions: Array<String> = [
   "Sensei",
   "Other (specify yourself)"
 ];
+
 const yearsOfExperiences: Array<String> = ["0-2 years", "2-5 years", "More than 5 years"];
+const route = useRoute();
+const accountType =
+  AccountType[Number(route.params.accountType)] === AccountType[0]
+    ? AccountType.HOUSEHOLDER
+    : AccountType.TECHNICIAN;
 </script>
 
 <template>
   <q-layout>
     <q-page-container>
       <IdentifyTechnician
-        v-if="userType === 'technician'"
+        v-if="accountType === AccountType.TECHNICIAN"
         :professions="professions"
         :yearsOfExperiences="yearsOfExperiences"
       />
@@ -27,3 +34,4 @@ const yearsOfExperiences: Array<String> = ["0-2 years", "2-5 years", "More than 
 </template>
 
 <style scoped></style>
+@/utils/accountType
