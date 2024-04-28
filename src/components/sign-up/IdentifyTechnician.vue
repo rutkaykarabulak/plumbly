@@ -12,7 +12,7 @@ defineProps<{
 
 const profession: Ref<string> = ref("");
 const secondProfession = ref(null);
-const yearsOfExperience = ref(null);
+const yearsOfExperience: Ref<string> = ref("");
 const otherProfession: Ref<string> = ref("");
 const professionSelect: Ref<QSelect | null> = ref(null);
 const otherProfessionRef: Ref<QSelect | null> = ref(null);
@@ -24,6 +24,10 @@ const isThereAnyValidationError = computed(() => {
     otherProfessionRef.value?.hasError ||
     yearsOfExperienceRef.value?.hasError
   );
+});
+
+const areRequiredFieldsEmpty = computed(() => {
+  return profession.value.length === 0 || yearsOfExperience.value.length === 0;
 });
 </script>
 
@@ -86,7 +90,12 @@ const isThereAnyValidationError = computed(() => {
         </div>
         <div class="q-gutter-xl q-my-xs">
           <q-btn rounded color="dark" to="/signUp/accountType" label="back" outline></q-btn>
-          <q-btn rounded color="dark" label="next" :disable="isThereAnyValidationError"></q-btn>
+          <q-btn
+            rounded
+            color="dark"
+            label="next"
+            :disable="isThereAnyValidationError || areRequiredFieldsEmpty"
+          ></q-btn>
         </div>
       </q-form>
     </div>

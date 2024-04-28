@@ -31,7 +31,7 @@ const accountType =
         :professions="professions"
         :yearsOfExperiences="yearsOfExperiences"
       />
-      <IdentifyHouseholder v-else />
+      <IdentifyHouseholder v-else :professions="professions" />
     </q-page-container>
   </q-layout>
 </template>
