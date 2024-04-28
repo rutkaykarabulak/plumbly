@@ -7,11 +7,14 @@ import { AccountType } from "@/utils/accountType";
 const professions: Array<String> = [
   "Plumber",
   "Electrician",
-  "Sex worker",
-  "Sensei",
+  "Gardener",
+  "Roofer",
+  "Carpenter",
+  "Painter",
+  "Cleaner",
+  "Electronic Expert",
   "Other (specify yourself)"
 ];
-
 const yearsOfExperiences: Array<String> = ["0-2 years", "2-5 years", "More than 5 years"];
 const route = useRoute();
 const accountType =
@@ -28,7 +31,7 @@ const accountType =
         :professions="professions"
         :yearsOfExperiences="yearsOfExperiences"
       />
-      <IdentifyHouseholder v-else />
+      <IdentifyHouseholder v-else :professions="professions" />
     </q-page-container>
   </q-layout>
 </template>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const technicians = ref([]);
-const options: Array<String> = ["Plumber", "Electrician", "Sex worker", "Sensei"];
+import { ref, type Ref } from "vue";
+defineProps<{
+  professions: Array<String>;
+}>();
+const technicians: Ref<Array<String>> = ref([]);
 </script>
 
 <template>
@@ -15,8 +17,7 @@ const options: Array<String> = ["Plumber", "Electrician", "Sex worker", "Sensei"
             class="col-xs-12"
             v-model="technicians"
             label="Search for technicians"
-            :options="options"
-            use-input
+            :options="professions"
             multiple
             clearable
             use-chips
@@ -32,6 +33,7 @@ const options: Array<String> = ["Plumber", "Electrician", "Sex worker", "Sensei"
             rounded
             color="black"
             class="col-xs-4 col-md-4"
+            :disable="technicians.length === 0"
           ></q-btn>
         </div>
       </q-form>
