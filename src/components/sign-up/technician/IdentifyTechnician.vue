@@ -94,6 +94,7 @@ const areRequiredFieldsEmpty = computed(() => {
             rounded
             color="dark"
             label="next"
+            to="/signUp/contactInformation/1"
             :disable="isThereAnyValidationError || areRequiredFieldsEmpty"
           ></q-btn>
         </div>
