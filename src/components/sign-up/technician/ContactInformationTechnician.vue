@@ -1,8 +1,23 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed, type Ref } from "vue";
+import { requiredFieldValidation } from "@/utils/validations/genericValidations";
+import type { QInput } from "quasar";
+
 const phoneNumber = ref("");
 const companyPhoneNumber = ref("");
 const companyAddress = ref("");
+
+const phoneNumberQInput: Ref<QInput | null> = ref(null);
+const companyPhoneQInput: Ref<QInput | null> = ref(null);
+const companyAddressQInput: Ref<QInput | null> = ref(null);
+
+const isThereAnyValidationError = computed(() => {
+  return (
+    phoneNumberQInput.value?.hasError ||
+    companyPhoneQInput.value?.hasError ||
+    companyAddressQInput.value?.hasError
+  );
+});
 </script>
 
 <template>
@@ -30,15 +45,32 @@ const companyAddress = ref("");
               </div>
             </div>
             <div class="col-xs-6">
-              <q-input v-model="phoneNumber" label="Your phone number" type="tel">
+              <q-input
+                v-model="phoneNumber"
+                label="Your phone number"
+                type="tel"
+                :rules="requiredFieldValidation"
+                ref="phoneNumberQInput"
+              >
                 <template v-slot:prepend>
                   <q-icon name="call"></q-icon>
                 </template>
               </q-input>
-              <q-input v-model="companyPhoneNumber" label="Company phone number" type="tel">
+              <q-input
+                v-model="companyPhoneNumber"
+                label="Company phone number"
+                type="tel"
+                :rules="requiredFieldValidation"
+                ref="companyPhoneQInput"
+              >
                 <template v-slot:prepend> <q-icon name="business"></q-icon> </template
               ></q-input>
-              <q-input v-model="companyAddress" label="Company address">
+              <q-input
+                v-model="companyAddress"
+                label="Company address"
+                :rules="requiredFieldValidation"
+                ref="companyAddressQInput"
+              >
                 <template v-slot:prepend> <q-icon name="book"></q-icon> </template
               ></q-input>
             </div>
@@ -50,7 +82,12 @@ const companyAddress = ref("");
                 class="text-capitalize q-ma-sm"
                 >Back</q-btn
               >
-              <q-btn to="/signUp/success/1" rounded color="dark" class="text-capitalize q-ma-sm"
+              <q-btn
+                to="/signUp/success/1"
+                rounded
+                color="dark"
+                class="text-capitalize q-ma-sm"
+                :disable="isThereAnyValidationError"
                 >Next</q-btn
               >
             </div>

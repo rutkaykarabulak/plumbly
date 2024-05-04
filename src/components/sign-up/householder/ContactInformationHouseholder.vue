@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { requiredFieldValidation } from "@/utils/validations/genericValidations";
 
 const phoneNumber = ref("");
 const address = ref("");
@@ -28,14 +29,18 @@ const address = ref("");
               </div>
             </div>
             <div class="col-xs-6">
-              <q-input v-model="phoneNumber" label="Your phone number" type="tel">
+              <q-input
+                v-model="phoneNumber"
+                label="Your phone number"
+                type="tel"
+                :rules="requiredFieldValidation"
+              >
                 <template v-slot:prepend>
                   <q-icon name="call"></q-icon>
                 </template>
               </q-input>
               <q-input v-model="address" label="Your address (optional)">
-                <template v-slot:prepend>
-                  <q-icon name="book"></q-icon> </template
+                <template v-slot:prepend> <q-icon name="book"></q-icon> </template
               ></q-input>
             </div>
             <div class="row items-end q-mt-md">
