@@ -25,12 +25,12 @@ const router = createRouter({
       component: () => import("@/views/sign-up/IdentifyUserView.vue")
     },
     {
-      path: "/signUp/contactInformation",
+      path: "/signUp/contactInformation/:accountType",
       name: "contactInformation",
       component: () => import("@/views/sign-up/ContactInformationView.vue")
     },
     {
-      path: "/signUp/success",
+      path: "/signUp/success/:accountType",
       name: "success",
       component: () => import("@/views/sign-up/SuccessView.vue")
     },

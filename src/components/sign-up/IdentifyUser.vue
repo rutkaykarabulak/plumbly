@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import IdentifyTechnician from "./IdentifyTechnician.vue";
-import IdentifyHouseholder from "./IdentifyHouseholder.vue";
+import IdentifyTechnician from "@/components/sign-up/technician/IdentifyTechnician.vue";
+import IdentifyHouseholder from "@/components/sign-up/householder/IdentifyHouseholder.vue";
 import { AccountType } from "@/utils/accountType";
 
 const professions: Array<String> = [

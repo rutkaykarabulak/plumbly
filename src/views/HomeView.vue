@@ -67,7 +67,11 @@ const options: Array<String> = ["Plumber", "Electrician", "Gardener", "Sensei"];
               <span class="text-white">for free!</span>
             </p>
             <div class="row col-12 items-center justify-center">
-              <q-btn to="/signUp" rounded color="black" class="col-xs-6 col-sm-4 text-capitalize"
+              <q-btn
+                to="/signUp"
+                rounded
+                color="black"
+                class="col-xs-6 col-sm-4 text-capitalize shadow-12"
                 >Sign up</q-btn
               >
             </div>
