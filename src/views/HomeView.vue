@@ -66,14 +66,22 @@ const options: Array<String> = ["Plumber", "Electrician", "Gardener", "Sensei"];
               Create an account in seconds and reach thousands of customer today,
               <span class="text-white">for free!</span>
             </p>
-            <div class="row col-12 items-center justify-center">
+            <div class="row col-12 q-pa-sm justify-center">
               <q-btn
                 to="/signUp"
                 rounded
                 color="black"
-                class="col-xs-6 col-sm-4 text-capitalize shadow-12"
+                class="col-xs-4 text-capitalize shadow-12 q-mx-md"
                 >Sign up</q-btn
               >
+              <q-btn
+                label="Login"
+                outline
+                rounded
+                color="black"
+                class="col-xs-4 text-capitaliez shadow-8"
+                to="/login"
+              ></q-btn>
             </div>
           </div>
         </q-page>

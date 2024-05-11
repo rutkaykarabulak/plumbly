@@ -38,6 +38,11 @@ const router = createRouter({
       path: "/signUp/emailCheck",
       name: "emailCheck",
       component: () => import("@/views/sign-up/CheckYourEmailView.vue")
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("@/views/LoginView.vue")
     }
   ]
 });
