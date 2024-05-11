@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, type Ref } from "vue";
 import { QInput } from "quasar";
-import {requiredFieldValidation} from "@/utils/validations/genericValidations"
+import { requiredFieldValidation } from "@/utils/validations/genericValidations";
 const email = ref("");
 const password = ref("");
 
@@ -9,8 +9,8 @@ const emailInput: Ref<QInput | null> = ref(null);
 const passwordInput: Ref<QInput | null> = ref(null);
 
 const isThereAnyValidationError = computed(() => {
-    const areRequiredFieldsEmpty = email.value === "" || password.value === "";
-    return emailInput.value?.hasError || passwordInput.value?.hasError || areRequiredFieldsEmpty;
+  const areRequiredFieldsEmpty = email.value === "" || password.value === "";
+  return emailInput.value?.hasError || passwordInput.value?.hasError || areRequiredFieldsEmpty;
 });
 </script>
 
