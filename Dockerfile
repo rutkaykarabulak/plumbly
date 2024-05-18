@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR usc/src/plumbly
+WORKDIR /app
 
 COPY . .
 
